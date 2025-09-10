@@ -305,3 +305,145 @@
             </div>
         </div>
         
+        <!-- Шаблон 2: Креативный -->
+        <div id="template2" class="resume-container template2 hidden">
+            <div class="header">
+                <div class="name-title">
+                    <h1 class="name">Иванов Иван</h1>
+                    <p class="title">Веб-разработчик & UI/Дизайнер</p>
+                </div>
+                <div class="contact-info">
+                    <p>+7 (999) 123-45-67</p>
+                    <p>ivanov@example.com</p>
+                    <p>Москва, Россия</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Профессиональный опыт</h2>
+                <div class="experience-item">
+                    <h3>Ведущий разработчик</h3>
+                    <p class="date">2020 - настоящее время</p>
+                    <p><strong>ООО "Технологии будущего"</strong></p>
+                    <p>Разработка современных веб-приложений с использованием React и Node.js. Руководство командой из 5 разработчиков. Внедрение процессов code review и непрерывной интеграции.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Веб-разработчик</h3>
+                    <p class="date">2017 - 2019</p>
+                    <p><strong>ООО "ВебСтудия"</strong></p>
+                    <p>Создание адаптивных и кроссбраузерных веб-сайтов. Работа с клиентами для определения требований и реализации проектов в установленные сроки.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Образование</h2>
+                <div class="education-item">
+                    <h3>Магистр компьютерных наук</h3>
+                    <p class="date">2015 - 2017</p>
+                    <p>Национальный исследовательский университет "Высшая школа экономики"</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Ключевые навыки</h2>
+                <p>Frontend: HTML5, CSS3, JavaScript, React, Vue.js</p>
+                <p>Backend: Node.js, Express, PHP, Laravel</p>
+                <p>Базы данных: MySQL, MongoDB, PostgreSQL</p>
+                <p>Инструменты: Git, Webpack, Docker, Figma</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Достижения</h2>
+                <ul>
+                    <li>Успешно запустил 15+ веб-проектов</li>
+                    <li>Увеличил производительность приложения на 40%</li>
+                    <li>Сократил время загрузки веб-сайтов на 60%</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Шаблон 3: Минималистичный -->
+        <div id="template3" class="resume-container template3 hidden">
+            <div class="header">
+                <h1 class="name">Иван Иванов</h1>
+                <p class="title">Веб-разработчик</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Опыт работы</h2>
+                
+                <div class="experience-item">
+                    <h3>Ведущий разработчик</h3>
+                    <p class="date">2020 - настоящее время</p>
+                    <p>ООО "Технологии будущего"</p>
+                    <p>Разработка и архитектура веб-приложений. Управление командой разработки. Внедрение лучших практик разработки.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Веб-разработчик</h3>
+                    <p class="date">2017 - 2019</p>
+                    <p>ООО "ВебСтудия"</p>
+                    <p>Создание адаптивных веб-сайтов. Интеграция с CMS. Оптимизация производительности.</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Образование</h2>
+                
+                <div class="education-item">
+                    <h3>Магистр компьютерных наук</h3>
+                    <p class="date">2015 - 2017</p>
+                    <p>Национальный исследовательский университет "Высшая школа экономики"</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Навыки</h2>
+                <p>HTML / CSS / JavaScript / React / Node.js / PHP / MySQL / Git</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Контакты</h2>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <p>Email: ivanov@example.com</p>
+                <p>Город: Москва</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const templateButtons = document.querySelectorAll('.template-btn');
+            const resumeContainers = document.querySelectorAll('.resume-container');
+            
+            templateButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const templateId = this.getAttribute('data-template');
+                    
+                    // Убираем активный класс у всех кнопок
+                    templateButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    // Скрываем все шаблоны
+                    resumeContainers.forEach(container => {
+                        container.classList.add('hidden');
+                    });
+                    
+                    // Показываем выбранный шаблон
+                    document.getElementById(templateId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
